@@ -6,6 +6,7 @@ import {
   ImageBackground,
   ScrollView,
   Pressable,
+  TouchableOpacity,
 } from "react-native";
 export default function App() {
   return (
@@ -32,12 +33,12 @@ export default function App() {
         showsVerticalScrollIndicator={false}
         // horizontal
       >
-        <Pressable onPress={() => alert("You pressed the logo!.")}>
+        <TouchableOpacity onPress={() => alert("You pressed the logo!.")}>
           <Image
             source={require("./assets/react-native.png")}
             style={{ width: 150, height: 150 }}
           />
-        </Pressable>
+        </TouchableOpacity>
         <Text
           style={{
             fontSize: 28,
@@ -76,6 +77,21 @@ export default function App() {
         >
           <Text style={{ color: "white", fontSize: 18 }}>Pressable Button</Text>
         </Pressable>
+
+        <TouchableOpacity
+          onPress={() => alert("You pressed the button.")}
+          style={{
+            backgroundColor: "#0077b6",
+            paddingVertical: 10,
+            paddingHorizontal: 20,
+            borderRadius: 5,
+            margin: 5,
+          }}
+        >
+          <Text style={{ color: "white", fontSize: 18 }}>
+            Touchable Opacity Button
+          </Text>
+        </TouchableOpacity>
       </ScrollView>
     </ImageBackground>
   );
