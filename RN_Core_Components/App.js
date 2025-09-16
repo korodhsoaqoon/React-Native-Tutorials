@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   View,
   Button,
@@ -7,8 +8,11 @@ import {
   ScrollView,
   Pressable,
   TouchableOpacity,
+  Modal,
 } from "react-native";
+
 export default function App() {
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <ImageBackground
       source={{
@@ -92,7 +96,52 @@ export default function App() {
             Touchable Opacity Button
           </Text>
         </TouchableOpacity>
+
+        <Button
+          title="Open Modal"
+          color="0077b6"
+          onPress={() => setModalVisible(true)}
+        />
       </ScrollView>
+
+      <Modal visible={modalVisible} transparent={true}>
+        <View
+          style={{
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "rgba(0,0,0,0.5)",
+          }}
+        >
+          <View
+            style={{
+              width: "80%",
+              backgroundColor: "white",
+              padding: 20,
+              borderRadius: 15,
+              alignItems: "center",
+              elevation: 5,
+            }}
+          >
+            <Text
+              style={{
+                fontSize: 20,
+                fontWeight: "bold",
+                marginBottom: 10,
+                color: "#0077b6",
+              }}
+            >
+              Hello From The Modal
+            </Text>
+            <Text>This is a styled modal content box.</Text>
+            <Button
+              onPress={() => setModalVisible(false)}
+              color="#0077b6"
+              title="Close "
+            />
+          </View>
+        </View>
+      </Modal>
     </ImageBackground>
   );
 }
