@@ -1,4 +1,12 @@
-import { View, Text, Image, ImageBackground, ScrollView } from "react-native";
+import {
+  View,
+  Button,
+  Text,
+  Image,
+  ImageBackground,
+  ScrollView,
+  Pressable,
+} from "react-native";
 export default function App() {
   return (
     <ImageBackground
@@ -24,10 +32,12 @@ export default function App() {
         showsVerticalScrollIndicator={false}
         // horizontal
       >
-        <Image
-          source={require("./assets/react-native.png")}
-          style={{ width: 150, height: 150 }}
-        />
+        <Pressable onPress={() => alert("You pressed the logo!.")}>
+          <Image
+            source={require("./assets/react-native.png")}
+            style={{ width: 150, height: 150 }}
+          />
+        </Pressable>
         <Text
           style={{
             fontSize: 28,
@@ -47,28 +57,25 @@ export default function App() {
           This is your very first mobile app using Expo 🚀
         </Text>
 
-        <Image
-          source={{
-            uri: "https://www.evolutionithub.com/wp-content/uploads/2024/04/react-native-apps-development-1024x952.png",
-          }}
-          width={320}
-          height={320}
+        <Button
+          title="Click Me"
+          color="#0077b6"
+          onPress={() => alert("Button Pressed")}
         />
 
-        <Text style={{ fontSize: 25 }}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus nulla,
-          amet aperiam non quasi magnam provident, autem, excepturi fugiat sequi
-          beatae iste sunt asperiores nesciunt doloremque recusandae nam
-          architecto obcaecati omnis eius voluptatem voluptatum vitae. Itaque
-          culpa in, pariatur fugiat reiciendis adipisci laudantium
-          necessitatibus similique provident quidem quod placeat quaerat
-          corrupti dicta nostrum quisquam eius neque ratione, qui voluptates,
-          cum totam inventore veniam rerum! Quam aliquid nemo quis ex accusamus
-          consectetur dicta repellendus eveniet temporibus recusandae laudantium
-          animi est, molestiae architecto iste ducimus exercitationem officiis
-          nesciunt doloribus cupiditate inventore possimus totam? Aperiam magni
-          illo soluta. Ex sed consequatur voluptas maxime.
-        </Text>
+        <Pressable
+          onPress={() => alert("Short Press")}
+          onLongPress={() => alert("Long Pressed")}
+          style={{
+            backgroundColor: "#0077b6",
+            paddingVertical: 10,
+            paddingHorizontal: 20,
+            borderRadius: 5,
+            margin: 5,
+          }}
+        >
+          <Text style={{ color: "white", fontSize: 18 }}>Pressable Button</Text>
+        </Pressable>
       </ScrollView>
     </ImageBackground>
   );
