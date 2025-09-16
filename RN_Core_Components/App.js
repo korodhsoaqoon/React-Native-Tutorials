@@ -9,6 +9,7 @@ import {
   Pressable,
   TouchableOpacity,
   Modal,
+  ActivityIndicator,
 } from "react-native";
 
 export default function App() {
@@ -102,6 +103,7 @@ export default function App() {
           color="0077b6"
           onPress={() => setModalVisible(true)}
         />
+        <ActivityIndicator size="100" color="#0077b6" />
       </ScrollView>
 
       <Modal visible={modalVisible} transparent={true}>
