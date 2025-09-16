@@ -10,6 +10,8 @@ import {
   Alert,
 } from "react-native";
 
+import { StatusBar } from "expo-status-bar";
+
 export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
   return (
@@ -25,6 +27,7 @@ export default function App() {
         padding: 20,
       }}
     >
+      <StatusBar style="dark" />
       <ScrollView
         style={{
           padding: 10,
