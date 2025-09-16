@@ -6,10 +6,8 @@ import {
   Image,
   ImageBackground,
   ScrollView,
-  Pressable,
   TouchableOpacity,
-  Modal,
-  ActivityIndicator,
+  Alert,
 } from "react-native";
 
 export default function App() {
@@ -66,84 +64,20 @@ export default function App() {
         <Button
           title="Click Me"
           color="#0077b6"
-          onPress={() => alert("Button Pressed")}
+          onPress={() =>
+            Alert.alert("Info", "Welcome To React Native Alert!", [
+              {
+                text: "Cancel",
+                style: "cancel",
+              },
+              {
+                text: "Ok",
+                onPress: () => console.log("You Pressed The Ok Button"),
+              },
+            ])
+          }
         />
-
-        <Pressable
-          onPress={() => alert("Short Press")}
-          onLongPress={() => alert("Long Pressed")}
-          style={{
-            backgroundColor: "#0077b6",
-            paddingVertical: 10,
-            paddingHorizontal: 20,
-            borderRadius: 5,
-            margin: 5,
-          }}
-        >
-          <Text style={{ color: "white", fontSize: 18 }}>Pressable Button</Text>
-        </Pressable>
-
-        <TouchableOpacity
-          onPress={() => alert("You pressed the button.")}
-          style={{
-            backgroundColor: "#0077b6",
-            paddingVertical: 10,
-            paddingHorizontal: 20,
-            borderRadius: 5,
-            margin: 5,
-          }}
-        >
-          <Text style={{ color: "white", fontSize: 18 }}>
-            Touchable Opacity Button
-          </Text>
-        </TouchableOpacity>
-
-        <Button
-          title="Open Modal"
-          color="0077b6"
-          onPress={() => setModalVisible(true)}
-        />
-        <ActivityIndicator size="100" color="#0077b6" />
       </ScrollView>
-
-      <Modal visible={modalVisible} transparent={true}>
-        <View
-          style={{
-            flex: 1,
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: "rgba(0,0,0,0.5)",
-          }}
-        >
-          <View
-            style={{
-              width: "80%",
-              backgroundColor: "white",
-              padding: 20,
-              borderRadius: 15,
-              alignItems: "center",
-              elevation: 5,
-            }}
-          >
-            <Text
-              style={{
-                fontSize: 20,
-                fontWeight: "bold",
-                marginBottom: 10,
-                color: "#0077b6",
-              }}
-            >
-              Hello From The Modal
-            </Text>
-            <Text>This is a styled modal content box.</Text>
-            <Button
-              onPress={() => setModalVisible(false)}
-              color="#0077b6"
-              title="Close "
-            />
-          </View>
-        </View>
-      </Modal>
     </ImageBackground>
   );
 }
