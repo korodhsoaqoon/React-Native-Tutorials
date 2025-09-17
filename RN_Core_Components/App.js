@@ -11,7 +11,7 @@ import {
 } from "react-native";
 
 import { StatusBar } from "expo-status-bar";
-
+import CustomButton from "./components/CustomButton";
 export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
   return (
@@ -79,6 +79,19 @@ export default function App() {
               },
             ])
           }
+        />
+
+        <CustomButton
+          title="Login"
+          onPress={() => alert("You pressed the Login Button")}
+        />
+        <CustomButton
+          title="Register"
+          onPress={() => alert("You pressed the Register Button")}
+        />
+        <CustomButton
+          title="Reset Password"
+          onPress={() => alert("You pressed the Reset Password Button")}
         />
       </ScrollView>
     </ImageBackground>
