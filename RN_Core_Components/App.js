@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 export default function App() {
   return (
     <View
@@ -10,6 +10,10 @@ export default function App() {
         padding: 20,
       }}
     >
+      <Image
+        source={require("./assets/react-native.png")}
+        style={{ width: 150, height: 150 }}
+      />
       <Text
         style={{
           fontSize: 28,
@@ -28,6 +32,14 @@ export default function App() {
       >
         This is your very first mobile app using Expo 🚀
       </Text>
+
+      <Image
+        source={{
+          uri: "https://www.evolutionithub.com/wp-content/uploads/2024/04/react-native-apps-development-1024x952.png",
+        }}
+        width={320}
+        height={320}
+      />
     </View>
   );
 }
