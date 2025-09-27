@@ -5,7 +5,9 @@ import {
   Image,
   ImageBackground,
   ScrollView,
+
   Pressable,
+
 } from "react-native";
 export default function App() {
   return (
@@ -32,12 +34,20 @@ export default function App() {
         showsVerticalScrollIndicator={false}
         // horizontal
       >
+
         <Pressable onPress={() => alert("You pressed the logo!.")}>
           <Image
             source={require("./assets/react-native.png")}
             style={{ width: 150, height: 150 }}
           />
         </Pressable>
+
+        <Image
+          source={require("./assets/react-native.png")}
+          style={{ width: 150, height: 150 }}
+        />
+
+
         <Text
           style={{
             fontSize: 28,
@@ -63,6 +73,7 @@ export default function App() {
           onPress={() => alert("Button Pressed")}
         />
 
+
         <Pressable
           onPress={() => alert("Short Press")}
           onLongPress={() => alert("Long Pressed")}
@@ -76,6 +87,7 @@ export default function App() {
         >
           <Text style={{ color: "white", fontSize: 18 }}>Pressable Button</Text>
         </Pressable>
+
       </ScrollView>
     </ImageBackground>
   );
